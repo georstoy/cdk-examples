@@ -48,7 +48,7 @@ export class DocdbLambdaAPIStack extends cdk.Stack {
             availabilityZones: vpc.availabilityZones.splice(3),
             dbClusterIdentifier: "docdb",
             masterUsername: "dbuser",
-            masterUserPassword: process.env.MASTER_USER_PASSWORD,
+            masterUserPassword: process.env.MASTER_USER_PASSWORD!,
             vpcSecurityGroupIds: [sg.securityGroupName],
             dbSubnetGroupName: subnetGroup.dbSubnetGroupName,
             port
